@@ -1,2 +1,5 @@
-// Configuração pública do Supabase. Nunca colocar service_role aqui.
-window.LISTA_CONFIG = { supabaseUrl: 'COLOCA_AQUI_O_PROJECT_URL', supabaseAnonKey: 'COLOCA_AQUI_A_PUBLISHABLE_KEY' };
+// Supabase public client configuration. Never commit service_role or secret keys.
+window.LISTA_CONFIG = {
+  supabaseUrl: 'https://onftbgxifnloftparnvw.supabase.co',
+  supabaseAnonKey: 'sb_publishable_Nqn3GXmsbNrKlrYd7pPdlQ__Kkxzh6X'
+};
