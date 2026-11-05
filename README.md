@@ -4,13 +4,13 @@ PWA de listas de compras partilhadas, com autenticação por email, Supabase e G
 
 ## Configuração (uma única vez)
 
-1. No GitHub, criar um novo repositório chamado **ListaCompras** dentro de **KhauzLabs**. Não modificar `Escala-pages`. O GitHub Pages gratuito em repositórios privados depende do plano; para alojamento gratuito, pode ser necessário um repositório **público**. Nunca guardar segredos no código.
-2. Criar um **novo projeto Supabase**, separado de outras aplicações.
-3. Em Supabase → SQL Editor, executar todo o ficheiro `supabase/schema.sql`.
+1. **Concluído:** Repositório `KhauzLabs/ListaCompras` criado, independente do `Escala-pages`.
+2. **Concluído:** Projeto Supabase `onftbgxifnloftparnvw` ligado.
+3. **Concluído:** Migração SQL `initial_listacompras_schema` executada, incluindo tabelas, RLS e Realtime.
 4. Em Supabase → Authentication → Providers, ativar Email/OTP (Magic Link). Em Authentication → URL Configuration, definir **Site URL** como `https://khauzlabs.github.io/ListaCompras/` e adicionar o mesmo URL em **Redirect URLs** (incluindo `/` final). Se usares domínio personalizado, substitui o URL.
-5. Em Supabase → Project Settings → API, copiar o **Project URL** e a chave **publishable/anon** para `config.js`. **Nunca usar service_role ou secret API key no frontend**.
-6. Enviar os ficheiros para a raiz do novo repositório, conservando a pasta `supabase/`.
-7. GitHub → Settings → Pages → Build and deployment → Deploy from a branch → `main` → `/ (root)` → Save. Aguarda o GitHub confirmar a publicação. Abre `https://khauzlabs.github.io/ListaCompras/`.
+5. **Concluído:** `config.js` atualizado com a URL do projeto e a chave publicável. **Nunca usar service_role ou secret API key no frontend**.
+6. **Concluído:** Ficheiros enviados à raiz do repositório, incluindo `supabase/`.
+7. **Pendente de confirmação:** GitHub → Settings → Pages → Build and deployment → Source → **GitHub Actions**. O workflow `.github/workflows/pages.yml` publica automaticamente as alterações após a ativação. Verifica a URL `https://khauzlabs.github.io/ListaCompras/`.
 8. No Supabase, garantir que **Realtime** está disponível e testar em dois dispositivos com contas de email diferentes.
 
 ## Funcionalidades incluídas
@@ -31,7 +31,7 @@ PWA de listas de compras partilhadas, com autenticação por email, Supabase e G
 - A partilha requer que cada participante tenha conta por email.
 - O código de convite não identifica utilizadores: quem tiver o código pode aderir, até expirar ou esgotar utilizações. Não partilhar publicamente.
 - O frontend usa a biblioteca Supabase carregada de CDN e requer uma primeira abertura online.
-- Ainda não há testes reais executados contra um projeto Supabase; a implementação requer verificação após configuração.
+- As tabelas e o RLS foram verificados na base de dados real; ainda falta um teste funcional de autenticação e sincronização entre duas contas.
 
 ## Segurança e desenvolvimento
 
