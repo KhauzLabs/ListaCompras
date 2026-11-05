@@ -1,5 +1,5 @@
 import {createClient} from 'https://esm.sh/@supabase/supabase-js@2.49.10';
-import {catalogue} from './catalog.js';
+import {catalogue} from './catalog.js?v=4';
 const cfg=window.LISTA_CONFIG||{},ready=cfg.supabaseUrl?.startsWith('https://')&&!cfg.supabaseAnonKey?.startsWith('COLOCA_');
 const sb=ready?createClient(cfg.supabaseUrl,cfg.supabaseAnonKey):null;
 const root=document.querySelector('#app'),cats=['Frescos','Bebé','Congelados','Fruta','Casa','Laticínios','Carnes e peixe','Padaria','Mercearia','Bebidas','Higiene','Fruta e legumes','Limpeza','Outros'];
