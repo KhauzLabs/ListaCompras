@@ -38,3 +38,7 @@ PWA de listas de compras partilhadas, com autenticação por email, Supabase e G
 O ficheiro `config.js` contém **apenas** a URL e chave pública do Supabase. As autorizações são aplicadas no servidor por RLS. Nunca enviar para o repositório passwords, tokens pessoais ou a `service_role` do Supabase.
 
 Para testar localmente: `python -m http.server 8080` na raiz do projeto e abrir `http://localhost:8080`. Adiciona esse endereço às Redirect URLs do Supabase para autenticação local.
+
+## Diagnóstico de publicação
+
+O workflow `.github/workflows/pages.yml` é executado a cada push na branch `main` depois de o GitHub Pages estar configurado com Source = GitHub Actions. Se o endereço mostrar 404, consultar o separador Actions e Settings > Pages para verificar se o deploy foi concluído.
